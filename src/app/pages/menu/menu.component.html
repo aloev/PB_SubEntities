@@ -1,0 +1,20 @@
+<p>menu works!</p>
+
+
+<div class="container-fluid align-content-center">
+    <button class="btn btn-outline-dark " (click)="agregarP() ">
+        Agregar Nuevo Plato
+    </button>
+</div>
+
+<div *ngIf="losplatos.length !== 0" class="mb-auto">
+
+    <div *ngFor="let plato of this.losplatos">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{plato.nombre}}<span class="close" (click)="deleteUser(plato)">x</span></div>
+            <div class="card-body">
+              <h5 class="card-title">{{plato.precio}}</h5>
+            </div>
+          </div>
+    </div>
+</div>
