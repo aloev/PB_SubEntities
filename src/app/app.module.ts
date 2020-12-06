@@ -16,6 +16,7 @@ import { appReducers } from './store/app.reducers';
 import { EffectsArray } from './store/effects/index';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ModificarComponent } from './pages/modificar/modificar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RouterModule } from '@angular/router';
     HacerPedidoComponent,
     MenuComponent,
     RegistrarUserComponent,
+    ModificarComponent,
 
   ],
   imports: [

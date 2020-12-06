@@ -1,1 +1,27 @@
 <p>dashboard works!</p>
+
+
+
+<table class="table">
+    <caption>List of users</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID_User</th>
+        <th scope="col">ID_Pedido</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>    
+    <tbody>
+      <tr *ngFor="let item of lasOrdersTemp ">
+        <td>{{item.id}}</td>
+        <td>{{item.userID}}</td>
+        <td>
+            <button (click)="editar(item.id)"
+                    [routerLink] = "['/modify', item.id]"
+                    class="btn btn-outline-light">
+                edit
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

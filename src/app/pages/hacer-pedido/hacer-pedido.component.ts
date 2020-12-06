@@ -121,13 +121,17 @@ export class HacerPedidoComponent implements OnInit {
   }
   crearMini( desh: plato){
 
+    const quantum: number = parseInt(this.verCantidad);
+    const totals: number = quantum * desh.precio;
+
     const meter: plato = {
 
       nombre: desh.nombre,
       id: desh.id,
       precio: desh.precio,
       cantidad: this.verCantidad,
-    }
+      total: totals
+    };
 
     this.tempDish.push(meter);
 
@@ -145,12 +149,17 @@ export class HacerPedidoComponent implements OnInit {
         UserId = user.id ;
       }
     }
-
-
+    // Total Orden
+    let totalz: number = 0 ;
+    for(let i of this.tempDish){
+      totalz += i.total;
+    }
+    
     const laorden: Orden = {
       id: new Date().getUTCMilliseconds().toString(),
       userID: UserId,
-      plato: this.tempDish
+      plato: this.tempDish,
+      total: totalz
     }
     console.log('los platos', this.tempDish);
     console.log('la Orden', laorden );

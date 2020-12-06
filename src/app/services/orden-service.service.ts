@@ -24,8 +24,21 @@ export class OrdenServiceService {
 
   }
 
-  dispararLs(): void{
+  ordenesModificadas(orden: Orden){
 
+    orden = Object.assign({}, orden);
+
+    this.ordenes = Object.assign([], this.ordenes );
+    this.ordenes = this.ordenes.filter( laorden => laorden.id !== orden.id);
+
+    this.ordenes.push(orden);
+
+    this.dispararLs();
+    
+  }
+
+  dispararLs(): void{
+    
     localStorage.setItem('ordenes', JSON.stringify(this.ordenes));
   }
 

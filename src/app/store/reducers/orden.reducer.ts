@@ -3,7 +3,7 @@ import { EntityAdapter, createEntityAdapter, EntityState } from '@ngrx/entity';
 import { state } from '@angular/animations';
 import { createFeatureSelector, createReducer, on } from '@ngrx/store';
 import { Orden } from '../../models/orden.model';
-import { crearOrden, loadOrdenes } from '../actions/orden.actions';
+import { crearOrden, loadOrdenes, updateOrden } from '../actions/orden.actions';
 
 
 // Crear Entidades
@@ -31,6 +31,10 @@ export const ordenReducer = createReducer(
 
     on(loadOrdenes, (state, action) => {
         return ordenAdapter.setAll(action.orden, state);
+    }),
+
+    on( updateOrden, ( state, action) => {
+        return ordenAdapter.updateOne(action.orden, state);
     })
     // on( llenarCliente, ( state, action ) => {
     //     return clienteAdapter.setAll(action.clientes, state);

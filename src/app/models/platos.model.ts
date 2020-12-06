@@ -7,5 +7,6 @@ export interface plato {
     precio: number,
     id: string,
     cantidad?: string,
+    total? : number,
 
 }

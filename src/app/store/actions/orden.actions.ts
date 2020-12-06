@@ -1,3 +1,4 @@
+import { Update } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
 import { Orden } from '../../models/orden.model';
 
@@ -21,4 +22,11 @@ export const loadOrdenes = createAction(
     '[Orden] Load Ordenes',
     props<{ orden: Orden[] }>()
 
+);
+
+// Edit Component
+export const updateOrden = createAction(
+
+  '[Orden] Update Product',
+  props<{ orden: Update<Orden> }>()
 );

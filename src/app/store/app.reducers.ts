@@ -7,6 +7,7 @@ export interface AppState {
     platos: reducers.PlatoState,
     clientes: reducers.ClienteState,
     ordenes: reducers.OrdenState,
+    orden: reducers.Order,
 }
 
 
@@ -14,5 +15,6 @@ export interface AppState {
 export const appReducers: ActionReducerMap<AppState> = {
     platos: reducers.platoReducer,
     clientes: reducers.clienteReducer,
-    ordenes: reducers.ordenReducer
+    ordenes: reducers.ordenReducer,
+    orden: reducers.verordenReducer
 }

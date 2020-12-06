@@ -1,0 +1,36 @@
+<p>modificar works!</p>
+<div *ngFor="let item of this.ourOrder.plato">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{item.nombre}}</h5>
+            <p>{{item.precio}}</p>
+            <p>{{item.cantidad}}</p>
+            <td style="border: 0">
+                <select [(ngModel)]="cantSeleccion" (change)="capturar()">
+                    <option value="0">Selecciona</option>
+                    <option *ngFor="let dato of nums">
+                      {{dato}}
+                    </option>
+                </select>
+                <button (click)="miniChange(item)" class="btn btn-primary">
+                    Este
+                </button>
+                <!-- <select (change)="capturar()" [(ngModel)]="cantSeleccion" ng-reflect-model="2" class="ng-valid ng-dirty ng-touched">
+                    <option *ngFor="let cantidad of nums">{{cantidad}}</option>
+
+                </select> -->
+            </td>
+            <!-- <button class="btn btn-info btn-sm" type="button" (click)="crearMini(item)" >
+                Add to Cart 
+                <i class="fa fa-shopping-cart"></i>
+            </button> -->
+        </div>
+    </div>
+</div>
+
+<button (click)="mandarChange()" class="btn btn-secondary">
+    Finalizar Cambios
+</button>
+<button class="btn btn-info" [routerLink]="['/dashboard']">
+    Regresar
+</button>

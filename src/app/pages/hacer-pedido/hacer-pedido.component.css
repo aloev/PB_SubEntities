@@ -1,0 +1,42 @@
+
+
+.first-row{
+    display: flex;
+    width: auto;
+    margin: auto;
+    margin-left: 40px;
+    grid-row: auto;
+    position: relative;
+    grid-column-gap: 5px;
+}
+
+.userI{
+    overflow-y: auto;
+    display: block;
+}
+
+.userI .np-te{
+    min-width: fit-content;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.row-n-2 .card{
+    /* display: inline-block; */
+    display: flex;
+    /* justify-content: right; */
+}
+
+.b-cent, .tit-low{
+    text-align: center;
+}
+
+
